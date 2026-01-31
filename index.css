@@ -1,3 +1,4 @@
+/* RESET & BASE STYLES */
 * {
     margin: 0;
     padding: 0;
@@ -10,227 +11,159 @@ html {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #222;
+    background-color: #fff;
 }
 
+/* HEADER */
 header {
-    background: rgba(20, 20, 20, 0.95);
-    backdrop-filter: blur(10px);
-    padding: 20px;
-    text-align: center;
-    font-family: Arial, sans-serif;
-    position : fixed;
-    width: 100%;
+    position: sticky;
     top: 0;
-    left: 0;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background: #111;
+    color: #fff;
 }
 
-#header.scrolled {
-    background: rgba(20, 20, 20, 0.9);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background 0.3s ease, box-shadow 0.3s ease;
-}
-
-.container_1 {
-    max-width: 1200px;
-    position: relative;
-    margin: 0 auto;
-    padding: 0.8rem 1rem;
+.container {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    max-width: 1200px;
+    margin: auto;
 }
 
-.logo {
-    font-size: 1.5rem;
-    color: #333;
-    text-decoration: none;
+#logo {
+    font-size: 1.4rem;
+    font-weight: bold;
 }
 
+/* NAVIGATION */
 .nav {
     display: flex;
-    gap: 1.5rem;
-    overflow: hidden;
-    max-height: 0;
+    gap: 1.2rem;
 }
 
 .nav a {
-    color: #333;
+    color: #fff;
     text-decoration: none;
-    font-weight: 500;
-    transition: color 0.2s ease;
+    font-size: 0.95rem;
 }
 
-.nav a::after {
-    content: "";
-    position: relative;
-    left: 0;
-    bottom: -4px;
-    width: 0;
-    height: 2px;
-    background: #702a0c;
-    transition: width 0.3s;
+.nav a:hover {
+    color: #f4c10f;
 }
 
-.nav a:hover::after {
-    width: 100%;
-}
-
+/* HAMBURGER MENU */
 .menu-toggle {
     display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 25px;
-    height: 20px;
     background: none;
     border: none;
     cursor: pointer;
-    z-index: 1100;
 }
 
-.menu-toggle span {
+.bar {
     display: block;
+    width: 25px;
     height: 3px;
-    width: 100%;
-    background: #333;
-    border-radius: 2px;
-    transition: all 0.3s ease;
+    margin: 5px;
+    background: #fff;
 }
 
+/* OVERLAY */
 .overlay {
     position: fixed;
-    inset: 0;
-    opacity: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 900;
-    visibility: hidden;
-}
-
-.overlay.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-main {
-    margin-top: 25px;
-    padding: 40px;
-    font-family: Arial, sans-serif;
-    background-color: palegoldenrod;
-}
-main section {
-    margin-top: 20px ;
-    margin-bottom: 20px;
-    padding: 10px ;
-    border: 1px solid #ddd;
-    background: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    z-index: 500;
-}
-#hero {
-    position: relative;
-    height: 400px;
-    background-image: url("_images/Skillz_Domain_Banner.png");
-    background-size: cover;           /* fills area, keeps aspect ratio */
-    background-position: center;      /* centers image */
-    background-repeat: no-repeat;
-    overflow: hidden;
-}
-#hero::before {
-    content: "";
-    position: absolute;
-    inset: 0; 
-    background: rgba(0, 0, 0, 0.5); 
-    z-index: 501;
-    pointer-events: none;
-}
-#hero #text {
-    position: relative;
-    background: #702a0c;
-    text-align: center;
-    margin-top: 250px;
-    padding: 10px;
-    color: white;
+    top: 0;
     left: 0;
-    right: 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
-    transition: transform 0.3s ease;
-    z-index: 502;
-}
-#text:hover {
-    transform: scale(1.03);
+    height: 100vh;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    z-index: 900;
 }
 
-#why-us {
-    margin-bottom: 0%;
-}
-main h2 {
-    background-color: #702a0c;
-    color: white;
-    padding: 10px;
-}
-
-
-footer {
-    background-color: #702a0c;
-    padding: 10px;
+/* HERO SECTION */
+#hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                url("_images/Skillz_Domain_Banner.png") center/cover no-repeat;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
     text-align: center;
-    color : white;
-    font-family: Arial, sans-serif;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-    z-index: 500;
+    padding: 1rem;
 }
-footer hr {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    width: 75%;
-    color: palegoldenrod;
+
+#hero h1 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
 }
+
+/* SECTIONS */
+section {
+    padding: 3rem 1.5rem;
+    max-width: 1000px;
+    margin: auto;
+}
+
+section h2 {
+    margin-bottom: 1rem;
+    color: #111;
+}
+
+#services ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+}
+
+#services li {
+    margin-bottom: 0.5rem;
+}
+
+/* FOOTER */
+footer {
+    background: #111;
+    color: #fff;
+    padding: 2rem 1.5rem;
+    text-align: center;
+}
+
 footer a {
-    color: white;
+    color: #f4c10f;
     text-decoration: none;
 }
 
+footer hr {
+    margin: 1.5rem 0;
+    border-color: #333;
+}
+
+/* MOBILE STYLES */
 @media (max-width: 768px) {
-    .nav {
-        display: flex;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        left: 0;
-        background-color: #e9ecef;
-        flex-direction: column;
-        gap: 0;
-        overflow: hidden;
-        padding: 10px;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-    .nav a {
-        padding: 1rem;
-        text-align: center;
-        margin: 0;
-        border-bottom: 1px solid #ddd;
-    }
-    .nav.active {
-        display: flex;
-        max-height: 0;
-        overflow: hidden;
-    }
     .menu-toggle {
-        display: flex;
+        display: block;
     }
-    .menu-toggle.active span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
+
+    .nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 250px;
+        background: #111;
+        flex-direction: column;
+        padding: 4rem 1.5rem;
+        transition: right 0.3s ease;
+        z-index: 1001;
     }
-    .menu-toggle.active span:nth-child(2) {
-        opacity: 0;
+
+    .nav.active {
+        right: 0;
     }
-    .menu-toggle.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -5px);
+
+    .overlay.active {
+        display: block;
     }
 }
