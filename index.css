@@ -50,7 +50,7 @@ main {
     margin-top: 25px;
     padding: 40px;
     font-family: Arial, sans-serif;
-    background-color: #ffde59;
+    background-color: palegoldenrod;
 }
 main section {
     margin-top: 20px ;
@@ -62,8 +62,23 @@ main section {
     z-index: 500;
 }
 #hero {
-    height: 300px;
+    height: 500px;
+    background-image: url("images/hero.jpg");
+    background-size: cover;           /* fills area, keeps aspect ratio */
+    background-position: center;      /* centers image */
+    background-repeat: no-repeat;
 }
+#hero #text {
+    background: #702a0c;
+    text-align: center;
+    margin-top: 350px;
+    padding: 10px;
+    color: white;
+    left: 0;
+    right: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
 #why-us {
     margin-bottom: 0%;
 }
