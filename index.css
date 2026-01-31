@@ -29,6 +29,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 8rem;
     padding: 1rem 1.5rem;
     max-width: 1200px;
     margin: auto;
@@ -108,6 +109,11 @@ section {
     margin: auto;
 }
 
+#about-h2 a {
+    color: #111;
+    text-decoration: none;
+}
+
 section h2 {
     margin-bottom: 1rem;
     color: #111;
@@ -120,6 +126,11 @@ section h2 {
 
 #services li {
     margin-bottom: 0.5rem;
+}
+#kinds-of-services {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-around;
 }
 
 /* FOOTER */
