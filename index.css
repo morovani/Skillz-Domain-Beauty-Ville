@@ -27,8 +27,6 @@ header {
 }
 nav {
     font-family: Arial, sans-serif;
-    padding-left: 20px;
-    padding-right: 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -44,6 +42,8 @@ nav a {
 nav a:hover {
     background-color: #ddd;
     border-radius: 5px;
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
 }
 
 main {
@@ -62,21 +62,35 @@ main section {
     z-index: 500;
 }
 #hero {
-    height: 500px;
-    background-image: url("images/hero.jpg");
+    height: 400px;
+    background-image: url("_images/Skillz_Domain_Banner.png");
     background-size: cover;           /* fills area, keeps aspect ratio */
     background-position: center;      /* centers image */
     background-repeat: no-repeat;
 }
+#hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: fit-content;
+    height: fit-content;
+    background: rgba(0, 0, 0, 0.1); 
+    z-index: 501;
+}
 #hero #text {
     background: #702a0c;
     text-align: center;
-    margin-top: 350px;
+    margin-top: 250px;
     padding: 10px;
     color: white;
     left: 0;
     right: 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+    z-index: 502;
+}
+#text:hover {
+    transform: scale(1.03);
+    transition: transform 0.3s ease;
 }
 
 #why-us {
