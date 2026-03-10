@@ -1,23 +1,27 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const menuToggle = document.getElementById("menu-toggle");
-    const nav = document.getElementById("nav");
-    const overlay = document.getElementById("overlay");
+window.onload = function() {
 
-    menuToggle.addEventListener("click", () => {
-        nav.classList.toggle("active");
-        overlay.classList.toggle("active");
-    });
+    document.addEventListener("DOMContentLoaded", () => {
+        const menuToggle = document.getElementById("menu-toggle");
+        const nav = document.getElementById("nav");
+        const overlay = document.getElementById("overlay");
 
-    overlay.addEventListener("click", () => {
-        nav.classList.remove("active");
-        overlay.classList.remove("active");
-    });
+        menuToggle.addEventListener("click", () => {
+            nav.classList.toggle("active");
+            overlay.classList.toggle("active");
+        });
 
-    // Close menu when a link is clicked (mobile UX)
-    document.querySelectorAll(".nav a").forEach(link => {
-        link.addEventListener("click", () => {
+        overlay.addEventListener("click", () => {
             nav.classList.remove("active");
             overlay.classList.remove("active");
         });
+
+        // Close menu when a link is clicked (mobile UX)
+        document.querySelectorAll(".nav a").forEach(link => {
+            link.addEventListener("click", () => {
+                nav.classList.remove("active");
+                overlay.classList.remove("active");
+            });
+        });
     });
-});
+
+};
